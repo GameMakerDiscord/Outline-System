@@ -90,7 +90,7 @@ repeat (_size) {
 	surface_set_target(screen_surface);
 	
 	shader_set(shd_outline);
-	var _s_t = sprite_get_texture(_sprite,_subimage);
+	var _s_t = surface_get_texture(_layer_surface);
 	var _s_w = texture_get_texel_width(_s_t);
 	var _s_h = texture_get_texel_height(_s_t);
 	
