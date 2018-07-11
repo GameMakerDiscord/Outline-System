@@ -14,17 +14,21 @@ void main()
 	
 	vec2 offset_x;
 	offset_x.x = pix_w;
+	offset_x.y = 0.0;
 	vec2 offset_y;
+	offset_y.x = 0.0;
 	offset_y.y = pix_h;
 	
 	vec4 colour = texture2D( gm_BaseTexture, v_vTexcoord);
 	float alpha = colour.a;
 	
-	for (float i=-border_w;i<border_w;i+=1.0) {
+	for (float i=-border_w;i<=border_w;i+=1.0) {
 		alpha += ceil(	texture2D( gm_BaseTexture, v_vTexcoord + offset_x*i).a);
 	    alpha += ceil(	texture2D( gm_BaseTexture, v_vTexcoord + offset_y*i).a);
 	    alpha += ceil(	texture2D( gm_BaseTexture, v_vTexcoord + offset_x*i + offset_y*i).a);
+	    alpha += ceil(	texture2D( gm_BaseTexture, v_vTexcoord - offset_x*i - offset_y*i).a);
 	    alpha += ceil(	texture2D( gm_BaseTexture, v_vTexcoord + offset_x*i - offset_y*i).a);
+	    alpha += ceil(	texture2D( gm_BaseTexture, v_vTexcoord - offset_x*i + offset_y*i).a);
 	}
 	if (colour.a >= 0.5) {
 		alpha=0.0;
@@ -36,3 +40,4 @@ void main()
 	}
     gl_FragColor = v_vColour * vec4(colour.rgb,alpha);
 }
+ 

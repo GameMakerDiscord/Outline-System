@@ -92,7 +92,7 @@ repeat (_size) {
 	shader_set(shd_outline);
 	var _s_t = sprite_get_texture(_sprite,_subimage);
 	var _s_w = texture_get_texel_width(_s_t);
-	var _s_h = texture_get_texel_width(_s_t);
+	var _s_h = texture_get_texel_height(_s_t);
 	
 	shader_set_uniform_f(uni_pix_w,_s_w);
 	shader_set_uniform_f(uni_pix_h,_s_h);
@@ -116,7 +116,7 @@ repeat (_size) {
 	
 	
 	ds_list_destroy(_list);
-}
+} 
 surface_set_target(screen_surface);
 	gpu_set_colorwriteenable(false,false,false,true);
 	gpu_set_blendmode(bm_subtract);
