@@ -17,4 +17,4 @@ If you're only looking for a basic outline shader implementation, then you'll wa
 
 
 Credits
- - Robert Turpin for the spaceship sprites. Provided for demonstration purposes only, you cannot use these sprites in your own projects. 
+ - [Robert Turpin]( https://thisnorthernboy.blog/) for the spaceship sprites. Provided for demonstration purposes only, you cannot use these sprites in your own projects. 
